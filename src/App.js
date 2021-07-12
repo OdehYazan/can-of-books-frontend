@@ -30,7 +30,7 @@ class App extends React.Component {
                 {/* TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
                 {isAuthenticated == true?  <BestBooks />: <Login />}
                    {/* {/* {isAuthenticated && */}
-                   <BestBooks />
+                  
                 
                 { !isAuthenticated && <Login />} 
               </Route >
