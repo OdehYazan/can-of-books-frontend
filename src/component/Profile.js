@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BookForm from './BookForm';
 import { withAuth0 } from '@auth0/auth0-react';
 
 class Profile extends Component {
@@ -8,6 +9,7 @@ class Profile extends Component {
             <>
                 {isAuthenticated &&
                     <>
+                        
                         <div>Hello {user.name}</div>;
                         <div>Hello {user.email}</div>;
 
