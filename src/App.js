@@ -11,8 +11,41 @@ import { withAuth0 } from "@auth0/auth0-react";
 import BestBooks from './BestBooks';
 import Login from './Login';
 import Profile from './component/Profile';
+import BookFormModal from './component/BookFormModal';
+
+
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+    showModal: false,
+        // hideModal: false
+
+    }
+
+    
+}
+showModelFun = () => {
+    this.setState({
+        showModal: true,
+    })
+
+
+}
+
+hideModelFun = () => {
+    this.setState({
+        showModal: false,
+    })
+
+
+}
+
+
+
+ 
 
   render() {
     const { isAuthenticated } = this.props.auth0;
@@ -21,14 +54,15 @@ class App extends React.Component {
     console.log('app', this.props);
     return(
       <>
-
+     
+   
         <Router>
           {/* <IsLoadingAndError> */}
             <Header />
             <Switch>
               <Route exact path="/">
                 {/* TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
-                {isAuthenticated == true?  <BestBooks />: <Login />}
+                {isAuthenticated == true?  <BestBooks  show={this.showModelFun} />: <Login />}
                    {/* {/* {isAuthenticated && */}
                   
                 
@@ -43,6 +77,8 @@ class App extends React.Component {
             <Footer />
           {/* </IsLoadingAndError> */}
         </Router>
+        <BookFormModal show={this.state.showModal}  hide={this.hideModelFun}/>
+        
       </>
     );
   }
