@@ -11,37 +11,14 @@ import { withAuth0 } from "@auth0/auth0-react";
 import BestBooks from './BestBooks';
 import Login from './Login';
 import Profile from './component/Profile';
-import BookFormModal from './component/BookFormModal';
+
 
 
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-    showModal: false,
-        // hideModal: false
+ 
 
-    }
-
-    
-}
-showModelFun = () => {
-    this.setState({
-        showModal: true,
-    })
-
-
-}
-
-hideModelFun = () => {
-    this.setState({
-        showModal: false,
-    })
-
-
-}
 
 
 
@@ -66,7 +43,7 @@ hideModelFun = () => {
                    {/* {/* {isAuthenticated && */}
                   
                 
-                { !isAuthenticated && <Login />} 
+                {/* { !isAuthenticated && <Login />}  */}
               </Route >
               <Route exact path="/profile">
                 <Profile />
@@ -77,7 +54,7 @@ hideModelFun = () => {
             <Footer />
           {/* </IsLoadingAndError> */}
         </Router>
-        <BookFormModal show={this.state.showModal}  hide={this.hideModelFun}/>
+        
         
       </>
     );

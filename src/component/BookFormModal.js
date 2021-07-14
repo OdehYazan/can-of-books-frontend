@@ -1,27 +1,21 @@
 import React, { Component } from 'react'
 import { Modal, Button } from 'react-bootstrap'
-import BookForm  from './BookForm';
+import BookForm from './BookForm';
 
 export class BookFormModal extends Component {
-   constructor(props){
-       super(props);
 
-   }
-book =()=>{
-    return this.props.addBook
-}
+    
 
-   
     render() {
         return (
             <div>
-                
+
                 <Modal show={this.props.show} onHide={this.props.hide}>
                     <Modal.Header closeButton>
                         <Modal.Title>form</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                    <BookForm />
+                        <BookForm  addBook={this.props.addBook} />
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.props.hide} >
@@ -35,5 +29,4 @@ book =()=>{
     }
 }
 
-export default BookFormModal ;
-
+export default BookFormModal;
