@@ -15,6 +15,7 @@ class MyFavoriteBooks extends React.Component {
     this.state = {
       userData: [],
       showModal: false,
+      
       server:process.env.REACT_APP_SERVER_URL,
       name:'',
       description:'',
@@ -108,6 +109,7 @@ console.log('addddgddddddddddd', bookData);
   showModelFun = () => {
     this.setState({
       showModal: true,
+      
     })
 
   }
@@ -115,6 +117,7 @@ console.log('addddgddddddddddd', bookData);
   hideModelFun = () => {
     this.setState({
       showModal: false,
+       showUpdateForm: false,
     })
 
   }
@@ -159,8 +162,8 @@ console.log('addddgddddddddddd', bookData);
 
         }
         <BookFormModal show={this.state.showModal}  hide={this.hideModelFun} addBook={this.addBook} />
-        {this.state.showUpdateForm&&
-        <UpdateForm name={this.state.name} description={this.state.description} status={this.state.status} updateBookFun={this.updateBookFun}/>}
+        {/* {this.state.showUpdateForm&& */}
+        <UpdateForm name={this.state.name} description={this.state.description} status={this.state.status} updateBookFun={this.updateBookFun}   hideUpdate={this.hideModelFun} showUpdate={this.state.showUpdateForm}  />
 
       </>
     )
