@@ -23,7 +23,7 @@ export class UpdateForm extends Component {
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={this.props.hide} >
+                        <Button variant="secondary" onClick={this.props.hideUpdate} >
                             Close
                         </Button>
                     </Modal.Footer>
